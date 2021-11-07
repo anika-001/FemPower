@@ -1,0 +1,45 @@
+<div class = "main">
+    <div class = "start">
+        <div class = "starttop">
+            <h1>Disorders<br>Remedies and<br>Exercises</h1>
+            <div class = "startimg">
+                <img src = "../../assets/images/Diseases.png" height="200">
+            </div>
+        </div>  
+        <div class = "startbottom">
+            <div class="search">
+                <input type="text" placeholder="SEARCH DISEASES, REMEDIES, EXERCISES">
+            </div>
+        </div>      
+    </div>
+    <div class = "middle">
+        <div class = "filter">
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1"> Disorders</label><br>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1"> Remidies</label><br>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1"> Exercises</label><br>
+        </div>
+        <div class = "display">
+            <div class="cont">
+                <div class = "cards"style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly;">
+                    <div *ngFor="let x of info1; let i=index">
+                    <!-- {{x.toString()}} -->
+                    <app-cards [type]="3" [id]="i" [disease_title]="x.payload.doc.data().name" [disease_description]="x.payload.doc.data().description" [disease_symptom1]="x.payload.doc.data().sy1" [disease_symptom2]="x.payload.doc.data().sy2" [disease_symptom3]="x.payload.doc.data().sy3" [disease_link]="x.payload.doc.data().link" [disease_image]="x.payload.doc.data().img"></app-cards>
+                    <!-- <app-cards [type] = "1" [id] = "x" style = "background-color: blueviolet;"></app-component> -->
+                    </div>
+                </div>
+                <!-- <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly;">
+                    <div *ngFor="let x of info; let i=index">
+                        {{x.toString()}}
+                    <app-cards [type]="3" [id]="i" [disease_title]="x.name" [disease_description]="x.description" [disease_symptom1]="x.sy1" [disease_symptom2]="x.sy2" [disease_symptom3]="x.sy3" [disease_link]="x.link" [disease_image]="x.img"></app-cards>
+                        <app-cards [type] = "1" [id] = "x" style = "background-color: blueviolet;"></app-component>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    
+</div>
+

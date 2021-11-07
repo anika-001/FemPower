@@ -1,0 +1,74 @@
+<!-- <p>appointments works!</p> -->
+<!-- <div class = "main">
+    <div class = "start">
+        <div class = "lstart">
+            <div class = "options">
+                
+            </div>
+            <div class = "options">
+                <div>
+                    <img src="">
+                </div>
+            </div>
+        </div>
+        <div class = "rstart">
+            
+        </div>
+    </div>
+    <div class = "middle">
+        <div class="search">
+            <input type="text" placeholder="  Search Doctor">
+        </div>
+        <div class = "doccards">
+            <div class = "docs">
+
+            </div>
+            <div class = "docs">
+
+            </div>
+            <div class = "docs">
+
+            </div>
+        </div>
+        <div class = "doccards">
+            <div class = "docs">
+
+            </div>
+            <div class = "docs">
+
+            </div>
+            <div class = "docs">
+
+            </div>
+        </div>
+    </div>
+    <div class ="end">
+
+    </div>
+</div> -->
+<div class = "main">
+    <div class="start">
+        <div class="starttop">
+            <div class="lstartcontent">
+                <p>Meet the <br>professionals</p>
+            </div>
+            <div class="startpic">
+                <img src="../../assets/images/doctors.png" height= "200">
+            </div>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="SEARCH DOCTORS">
+        </div>
+     </div>
+     <div class="middle">
+        <div class="cont">
+            <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly;">
+                <div *ngFor="let x of gynac; let i=index">
+                <!-- {{x.toString()}} -->
+                <!-- <app-cards [type]="8" [id]="i" [NGO_Name]="x.payload.doc.data().name" [NGO_email]="x.payload.doc.data().email" [NGO_phone]="x.payload.doc.data().phone" ></app-cards> -->
+                <!-- <app-component [type] = "1" [id] = "x" style = "background-color: blueviolet;"></app-component> -->
+            </div>
+            </div> 
+        </div>
+    </div>
+</div>

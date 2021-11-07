@@ -1,0 +1,22 @@
+<div class = "main">
+    <div class = "header">
+        <div class = "starttop">
+            <h1>Orders</h1>
+            <div class = "startimg">
+                <img src = "../../assets/images/orders.png" height="200">
+            </div>
+        </div>  
+        <div class = "startbottom">
+            <div class="search">
+                <input type="text" placeholder="SEARCH FOR ORDERS">
+            </div>
+        </div>            
+    </div>
+    <div class = "maincontent">
+        <div class = "products">
+            <div class = "product" *ngFor = "let x of [1]; let i = index">
+                <app-cards [type] = "9" [id] = "i" ></app-cards>
+            </div>
+        </div>
+    </div>
+</div>

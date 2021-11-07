@@ -1,0 +1,363 @@
+<!-- <div class="cont"> -->
+<ng-template #t let-fill="fill">
+  <span class="star1" [class.full]="fill === 100">
+    <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+  </span>
+</ng-template>
+<div class="card" *ngIf="type == 1">
+  <div class="sneaker">
+    <div class="circle"></div>
+    <img class="img1" src="{{prod_img}}" alt="adidas">
+  </div>
+  <div class="info">
+    <h1 class="title">{{prod_title}}</h1>
+    <h3 class="description" style="color: gray;">Sold by: {{prod_soldby}}</h3>
+    
+    <h3 class="description2">{{prod_desc}}</h3>
+    <div class="sizes">
+      <button>Rs {{prod_price}}</button>
+      <ngb-rating [rate]="prod_rating" [readonly]="true" [max]="5" [starTemplate]="t"></ngb-rating>
+      <!-- <button>40</button>
+            <button class="active">42</button>
+            <button>44</button> -->
+    </div>
+    <div class="purchase">
+      <button (click) = "purchaseclicked()">Purchase</button>
+    </div>
+  </div>
+</div>
+
+<!-- </div> -->
+
+
+<div class="card-1" *ngIf="type == 2">
+  <div class="card-image"></div>
+  <div class="card-text">
+    <span class="date">4 days ago</span>
+    <h2>Post One</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, Ducimus, repudiandae temporibus omnis illum maxime quod deserunt eligendi
+      dolor</p>
+  </div>
+  <div class="card-stats">
+    <div class="stat">
+      <div class="value">4<sup>m</sup></div>
+      <div class="type">read</div>
+    </div>
+    <div class="stat border">
+      <div class="value">5123</div>
+      <div class="type">views</div>
+    </div>
+    <div class="stat">
+      <div class="value">32</div>
+      <div class="type">comments</div>
+    </div>
+  </div>
+</div>
+
+
+
+<a href="{{disease_link}}">
+  <div class="card-1" *ngIf="type == 3">
+    <div class="card-image" [ngStyle]="{background: 'url(' + disease_image + ')','background-size':'100% 100%'}"></div>
+    <div class="card-text" style="color: #92b8ff;">
+
+      <h2>{{disease_title}}</h2>
+      <p>{{disease_description}}</p>
+    </div>
+    <div class="card-stats" style="background-color:#9370dc;">
+      <div class="stat">
+
+        <div class="type">{{disease_symptom1}}</div>
+      </div>
+      <div class="stat border">
+
+        <div class="type">{{disease_symptom2}}</div>
+      </div>
+      <div class="stat">
+
+        <div class="type">{{disease_symptom3}}</div>
+      </div>
+    </div>
+  </div>
+</a>
+
+
+
+<a href="{{News_link}}">
+  <div class="card-11" *ngIf="type == 4">
+
+    <div class="card-text"style="color: #92b8ff;">
+      <!--<span class="date">4 days ago</span>-->
+      <h2>{{News_title}}</h2>
+      <p>{{News_Author}}</p>
+    </div>
+    <div class="card-stats"style="background-color:#9370dc;">
+      <div class="stat">
+        <div class="value">4<sup>m</sup></div>
+        <div class="type">read</div>
+      </div>
+      <div class="stat border">
+        <div class="value">{{News_rating}}</div>
+        <div class="type">Stars</div>
+      </div>
+      <div class="stat">
+        <div class="value">{{News_comments}}</div>
+        <div class="type">comments</div>
+      </div>
+    </div>
+  </div>
+</a>
+
+
+
+<!--type 5 card/art-->
+<div class="card-51" *ngIf="type == 5">
+  <div class="wrap">
+    <!--main container-- reference :https://codepen.io/IanHazelton/pen/XWWgeOz-->
+    <div class="gift-card-box">
+      <!--white area which holda the card & UI-->
+      <div class="confirmation">
+        <!--section only seen after card is sent-->
+        <!--the ring and check mark-->
+        <svg class="all-good" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+          <circle class="path circle" fill="none" stroke="#777" stroke-width="6" stroke-miterlimit="10" cx="65.1"
+            cy="65.1" r="62.1" />
+          <polyline class="path check" fill="none" stroke="#777" stroke-width="6" stroke-linecap="round"
+            stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 " />
+        </svg>
+        <!--message to say say it was successful-->
+        <p class="success">Right on! Send another?</p>
+      </div>
+      <!--card iteself - parent container-->
+      <div class="card-5">
+        <!--design for the card front. Bg image is in the css-->
+        <div class="front">
+          <!--logo container-->
+          <div class="front-logo-cnt" [ngStyle] = "{background: 'url(' + Art_Img + ')' }">
+            <!--apple logo-->
+            <!-- <img src="{{Art_Img}}" class="apple-logo" height = "500vh" width> -->
+             <!-- width="30vw" height="30vh"> -->
+
+            <!-- <svg class="apple-logo" xmlns="http://www.w3.org/2000/svg" width="256" height="315" viewBox="0 0 256 315">
+              <path fill="#fff"
+                d="M213.803394,167.030943 C214.2452,214.609646 255.542482,230.442639 256,230.644727 C255.650812,231.761357 249.401383,253.208293 234.24263,275.361446 C221.138555,294.513969 207.538253,313.596333 186.113759,313.991545 C165.062051,314.379442 158.292752,301.507828 134.22469,301.507828 C110.163898,301.507828 102.642899,313.596301 82.7151126,314.379442 C62.0350407,315.16201 46.2873831,293.668525 33.0744079,274.586162 C6.07529317,235.552544 -14.5576169,164.286328 13.147166,116.18047 C26.9103111,92.2909053 51.5060917,77.1630356 78.2026125,76.7751096 C98.5099145,76.3877456 117.677594,90.4371851 130.091705,90.4371851 C142.497945,90.4371851 165.790755,73.5415029 190.277627,76.0228474 C200.528668,76.4495055 229.303509,80.1636878 247.780625,107.209389 C246.291825,108.132333 213.44635,127.253405 213.803394,167.030988 M174.239142,50.1987033 C185.218331,36.9088319 192.607958,18.4081019 190.591988,0 C174.766312,0.636050225 155.629514,10.5457909 144.278109,23.8283506 C134.10507,35.5906758 125.195775,54.4170275 127.599657,72.4607932 C145.239231,73.8255433 163.259413,63.4970262 174.239142,50.1987249" />
+            </svg> -->
+            <!--p class="card-description">$100</p-->
+          </div>
+        </div>
+        <!--design for the back of the card-->
+        <div class="back">
+          <!--input fields-->
+          <form class="form" autocomplete="off" novalidate>
+            <fieldset>
+              <label for="card-number">From:</label>
+              <input type="text" class="input-card-info" maxlength="30" autofocus />
+            </fieldset>
+            <fieldset>
+              <label for="card-holder">To:</label>
+              <input type="text" class="input-card-info" maxlength="30" />
+            </fieldset>
+            <fieldset>
+              <label for="card-holder">Message:</label>
+              <input type="text" class="input-card-info input-card-info--lg" maxlength="80" />
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <!--buttons parent-->
+      <div class="button-cnt">
+        <!--initial button-->
+        <!-- <div class = "name" id="btn-card-flip" class="primary-cta" style="background-color: #9370dc;">{{Art_Name}}</div> -->
+        <button id="btn-card-flip" class="primary-cta" style="background-color: #9370dc;">{{Art_Name}}</button>
+        <!--the two buttons which appear once card is flipped-->
+        <button id="close" class="secondary-cta secondary-cta--done hidden"style="background-color: #9370dc;">Close</button>
+        <button id="btn-card-send" class="secondary-cta secondary-cta--send hidden"style="background-color: #9370dc;">Send</button>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+<!--Blogs-->
+<a href="{{blog_link}}" *ngIf="type == 6">
+  <div class="card-1" >
+    <div class="card-image" [ngStyle]="{background: 'url(' + blog_image + ')','background-size':'100% 100%'}"></div>
+    <div class="card-text"style="color: #92b8ff">
+      <span class="date">{{blog_date}}</span>
+      <h2>{{blog_title}}</h2>
+      <p>{{blog_Author}}</p>
+    </div>
+    <div class="card-stats"style="background-color:#9370dc;">
+      <div class="stat">
+        <div class="value">4<sup>m</sup></div>
+        <div class="type">read</div>
+      </div>
+      <div class="stat border">
+        <div class="value">5123</div>
+        <div class="type">views</div>
+      </div>
+      <div class="stat">
+        <div class="value">32</div>
+        <div class="type">comments</div>
+      </div>
+    </div>
+  </div>
+</a>
+
+<!--Contact-gyno card-->
+
+<div class="card-7" *ngIf="type == 7">
+  <div class="contact-us " >
+    <div class="title">
+      <h1>Contact an Expert</h1>
+    </div>
+    <div class="form">
+      <div class="form-items">
+        <input type="text" class="input" placeholder="Your Name here">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="form-items">
+        <input type="text" class="input" placeholder="Your Email">
+        <i class="fas fa-envelope"></i>
+      </div>
+      <div class="form-items">
+        <textarea class="input message" cols="30" rows="10"
+          placeholder="Type your query here and we'll get back to you!"></textarea>
+      </div>
+    </div>
+
+    <div class="btn" (click) = "gynosubmitclicked()">
+      Submit
+      <!-- <i class="fas fa-arrow-right"></i> -->
+    </div>
+
+
+    <!-- <div class="social-icons">
+      <div class="facebook">
+        <i class="fab fa-facebook-f"></i>
+      </div>
+      <div class="twitter">
+        <i class="fab fa-twitter"></i>
+      </div>
+      <div class="google">
+        <i class="fab fa-google-plus-g"></i>
+      </div>
+    </div> -->
+
+  </div>
+  
+</div>
+
+<!--NGO card-->
+<div class="card-8"  *ngIf="type == 8">
+  <!-- <div class="wrapper">
+    <h1>Our Doctors</h1> -->
+    <!-- <div class="team"> -->
+      <div class="team_member">
+        <div class="team_img">
+          <img style="width: 10vh; height: 10vh;" src="../../assets/images/docheart.jpg" alt="Team_image">
+        </div>
+        <!-- <h3>Paul Doe</h3> -->
+        <p class="role">{{NGO_Name}}</p>
+        <p class="role">{{NGO_email}}</p>
+        <p class="role">{{NGO_phone}}</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quaerat tempora, voluptatum quas facere dolorum aut cumque nihil nulla harum nemo distinctio quam blanditiis dignissimos.</p>
+      </div>
+     
+    <!-- </div> -->
+  <!-- </div>	 -->
+</div>
+
+<!--delivery status-->
+<div class="card-9"*ngIf="type == 9">
+  <div class="card">
+    <div class="title">Purchase Reciept</div>
+    <div class="info">
+        <div class="row">
+            <div class="col-7"> <span id="heading">Date</span><br> <span id="details">4 July 2021</span> </div>
+            <div class="col-5 pull-right"> <span id="heading">Order No.</span><br> <span id="details">012j1gvs356c</span> </div>
+        </div>
+    </div>
+    <div class="pricing">
+        <div class="row">
+            <div class="col-9"> <span id="name">Sanitary Napkins</span> </div>
+            <div class="col-3"> <span id="price">Rs 300</span> </div>
+        </div>
+        <div class="row">
+            <div class="col-9"> <span id="name">Shipping</span> </div>
+            <div class="col-3"> <span id="price">Rs 100</span> </div>
+        </div>
+    </div>
+    <div class="total">
+        <div class="row">
+            <div class="col-9"></div>
+            <div class="col-3"><big>Rs 400</big></div>
+        </div>
+    </div>
+    <div class="tracking">
+        <div class="title">Tracking Order</div>
+    </div>
+    <div class="progress-track">
+        <ul id="progressbar">
+            <li class="step0 active " id="step1">Ordered</li>
+            <li class="step0 active text-center" id="step2">Shipped</li>
+            <li class="step0 active text-right" id="step3">On the way</li>
+            <li class="step0 text-right" id="step4">Delivered</li>
+        </ul>
+    </div>
+    <div class="footer">
+        <div class="row">
+            <div class="col-2"><img class="img-fluid" src="https://i.imgur.com/YBWc55P.png"></div>
+            <div class="col-10">Want any help? Please &nbsp;<a> contact us</a></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!--Book an appointment-->
+<div class="card-7" *ngIf="type == 10">
+  <div class="contact-us " >
+    <div class="title">
+      <h1>Book an Appointment</h1>
+    </div>
+    <div class="form">
+      <div class="form-items">
+        <input type="text" class="input" placeholder="Your Name here">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="form-items">
+        <input type="text" class="input" placeholder="Your Email">
+        <i class="fas fa-envelope"></i>
+      </div>
+      <div class="form-items">
+        <textarea class="input message" cols="30" rows="10"
+          placeholder="Type your query her and we'll get back to you!"></textarea>
+      </div>
+      <div class="form-items">
+        <input type="date" class="input" placeholder="favourable Date">
+        <i class="fas fa-envelope"></i>
+      </div>
+    </div>
+
+    <div class="btn" (click) = "gynosubmitclicked()">
+      Submit
+    </div>
+
+
+    <div class="social-icons">
+      <div class="facebook">
+        <i class="fab fa-facebook-f"></i>
+      </div>
+      <div class="twitter">
+        <i class="fab fa-twitter"></i>
+      </div>
+      <div class="google">
+        <i class="fab fa-google-plus-g"></i>
+      </div>
+    </div>
+
+  </div>
+  
+</div>

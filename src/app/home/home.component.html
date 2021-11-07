@@ -1,0 +1,58 @@
+<div class = "main">
+    <div class = "images">
+        <div class = "imgtop"></div>
+
+        <div class = "whatwedopage">
+            <div class = "whatwedoimg">
+                <div class = "title2">
+                    What do we do?
+                </div>
+                <div class = "infowhatwedo">
+                    We've only one mission, empowering every Woman out there to come out openly and achieve the impossible!
+                </div>
+            </div>
+        </div>
+        
+        <!-- <div class = "randomimg"></div> -->
+    </div>
+    <div class = "maincont">
+        <div class = "toptrans">
+            <div class = "content">
+                <div class = "name">
+                    FemPower
+                </div>
+                <div class="tagline">
+                    Empowering all Women!
+                </div>
+                <div class = "custbutton">
+                    Read More
+                </div>
+            </div>
+        </div>
+        <div class = "infosec">
+            <div class = "name2">
+                More About Us!
+            </div>
+            <div class = "info">
+                Our aim is to make FemPower a one stop place for everything, from a safe space to discuss everything, to growying academicly, finding exclusive opportunities and so much more!
+            </div>
+        </div>
+        <div class = "whatwedo">
+
+        </div>
+        <div class = "spaces">
+            <div class = "name2">
+                Explore our spaces
+            </div>
+
+            <div class = "spacespace">
+                <div class = "space" *ngFor = "let x of spaces; let i = index">
+                    <div class = "spaceimg"><fa-icon [icon]="icons[i]" [ngStyle] = "{'color': x.color}"></fa-icon></div>
+                    <div class = "namespace">{{x.name}}</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</div>

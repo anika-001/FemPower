@@ -1,0 +1,9 @@
+<div class="cont">
+    <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly;">
+        <div *ngFor="let x of info; let i=index">
+        <!-- {{x.toString()}} -->
+        <app-cards [type]="8" [id]="i" [gyno_name]="x.payload.doc.data().Name" [gyno_description]="x.payload.doc.data().Description" [gyno_image]="x.payload.doc.data().Image"  [gyno_sp]="x.payload.doc.data().Specialization"></app-cards>
+        <!-- <app-component [type] = "1" [id] = "x" style = "background-color: blueviolet;"></app-component> -->
+    </div>
+    </div> 
+</div>

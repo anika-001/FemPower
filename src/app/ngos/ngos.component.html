@@ -1,0 +1,27 @@
+<!-- <p>ngos works!</p> -->
+<div class="main">
+    <div class="start">
+        <div class="starttop">
+            <div class="lstartcontent">
+                <p>N G O s</p>
+            </div>
+            <div class="startpic">
+                <img src="../../assets/images/NGO.png" >
+            </div>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="SEARCH NGOs">
+        </div>
+        <div class="middle">
+            <div class="cont">
+                <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly; margin-top: 10vh;">
+                    <div *ngFor="let x of NGOs; let i=index">
+                    <!-- {{x.toString()}} -->
+                    <app-cards [type]="8" [id]="i" [NGO_Name]="x.payload.doc.data().name" [NGO_email]="x.payload.doc.data().email" [NGO_phone]="x.payload.doc.data().phone" ></app-cards>
+                    <!-- <app-component [type] = "1" [id] = "x" style = "background-color: blueviolet;"></app-component> -->
+                </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>

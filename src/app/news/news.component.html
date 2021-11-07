@@ -1,0 +1,11 @@
+
+<div class="cont">
+    <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly;">
+        <div *ngFor="let x of Newsdata.hits; let i=index">
+        <!-- {{x.toString()}} -->
+        <app-cards [type]="4" [id]="i" [News_title]="x.title" [News_Author]="x.author" [News_rating]="x.points" [News_comments]="x.num_comments" [News_link]="x.url"></app-cards>
+        <!-- <app-component [type] = "1" [id] = "x" style = "background-color: blueviolet;"></app-component> -->
+    </div>
+    </div> 
+</div>
+
